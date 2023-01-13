@@ -1,13 +1,15 @@
+import java.time.LocalDate;
+
 public class Main {
 
 
     public static void main(String[] args) {
         checkLeapYear(2000);
-        getClientOS();
+        checkDevice(1, 2018);
         int distance;
         int deliveryDistance = 95;
         int deliveryTime = calculateDeliveryTime(deliveryDistance);
-        System.out.println("Потребуется N  дней: " + deliveryTime);
+        System.out.println("Потребуется n дней: " + deliveryTime);
 
 
     }
@@ -17,10 +19,8 @@ public class Main {
     }
 
 
-    private static void getClientOS() {
-
-        int currentYear = 2023;
-
+    public static void checkDevice(int osType, int releaseYear) {
+        int currentYear = LocalDate.now().getYear();
         int clientOs = 0;
         if (clientOs <= 0) {
 
@@ -63,5 +63,6 @@ public class Main {
     }
 
 }
+
 
 
