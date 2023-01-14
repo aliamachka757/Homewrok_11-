@@ -1,13 +1,15 @@
+import java.time.LocalDate;
+
 public class Main {
 
 
     public static void main(String[] args) {
         checkLeapYear(2000);
-        getClientOS();
+        checkDevice(1, 2018);
         int distance;
         int deliveryDistance = 95;
         int deliveryTime = calculateDeliveryTime(deliveryDistance);
-        System.out.println("Потребуется N  дней: " + deliveryTime);
+        System.out.println("Потребуется n дней: " + deliveryTime);
 
 
     }
@@ -17,23 +19,23 @@ public class Main {
     }
 
 
-    private static void getClientOS() {
-
-        int currentYear = 2023;
-
-        int clientOs = 0;
-        if (clientOs <= 0) {
-
-            System.out.println(" Установите версию приложения для iOS по ссылке");
-        } else if (clientOs >= 0) {
-            System.out.println("Установите версию приложения для Android по ссылке ");
+    public static void checkDevice(int osType, int releaseYear) {
+        int currentYear = LocalDate.now().getYear();
+        String osName;
+        if (osType == 0) {
+            osName = "iOS";
+        } else {
+            osName = "Android";
         }
 
-
-        int clientDeviceYear = 2015;
-        if (clientDeviceYear <= 2015) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        if (releaseYear < currentYear) {
+            System.out.println("Please install the Lite version of the app for " + osName);
+        } else {
+            System.out.println("Please install the regular version of the app for " + osName);
         }
+    } {
+
+
 
 
     }
@@ -63,5 +65,18 @@ public class Main {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
